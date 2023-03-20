@@ -1,0 +1,13 @@
+<launch>
+	<!-- ds4drv -->
+	<node name="ds4drv_script_call" pkg="control" type="ds4drv.sh" output="screen" />
+	
+	<!--Joy ros node -->
+	<node respawn="true" pkg="joy" type="joy_node" name="ps4_joy" >
+	<param name="dev" type="string" value="/dev/input/js0" />
+	<param name="deadzone" value="0.12" />
+	</node>
+
+	<!--Ps4 ros node -->
+	<!--node pkg="control" type="control" name="control" output="screen"/-->
+</launch>
